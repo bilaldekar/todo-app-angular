@@ -1,0 +1,46 @@
+<p-panel header="My day" class="ui-g-6">
+  <div class="ui-g">
+
+    <div class="ui-g-12">
+      <div class="ui-g-1" style="padding-top: 11px; padding-left: 0%">
+        <img src="assets/img/checked.png" height="42" width="42">
+      </div>
+      <div class="ui-g-10" style="padding-top: 0%">
+        <h2 id="title"> {{today}} </h2>
+      </div>
+    </div>
+
+    <div class="ui-g-12" *ngFor="let t of tasks">
+      <div class="ui-g-11" style="padding: 0%;margin: 0%">
+
+        <p-checkbox value="t.name" id="a" label="{{t.name}}"> </p-checkbox>
+
+        <!--div id="b">{{t.name}}</div-->
+      </div>
+      <div class="ui-g-1" style="padding: 0%;margin: 0%">
+        <p-inputSwitch [(ngModel)]="t.important" (onChange)="switchImportant(t)"> </p-inputSwitch>
+      </div>
+      <div class="ui-g-12" *ngIf="tasks.indexOf(t)!=tasks.length-1" style="padding: 0%; margin-top: 8px">
+        <hr>
+      </div>
+    </div>
+
+    <div class="ui-g-12" style="margin-top: 10px">
+      <div class="ui-inputgroup">
+        <input #newtask [(ngModel)]="task" name="task" type="text" pInputText placeholder="New Todo"
+          class="ui-g-12 ui-md-10 newtask" (keyup.enter)="add(newtask.value)">
+
+        <button pButton type="button" icon="pi pi-fw pi-times" class="rmBtn" (click)="remove()" *ngIf="task"
+          style="margin-right: 15px"></button>
+
+        <button pButton type="button" label="Add" class="ui-button-plus" (click)="add(newtask.value)" *ngIf="task"
+          class="adBtn"></button>
+      </div>
+      <div>
+          <span *ngIf="error" style="color: red" >
+            todo already added
+          </span>
+      </div>
+    </div>
+  </div>
+</p-panel>

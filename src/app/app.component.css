@@ -1,0 +1,16 @@
+
+#body{
+    margin-left: 60px;
+}
+
+#side-menu {
+    padding-top: 63px;
+    width: 370px;
+  }
+
+  #content-body {
+    padding-top: 55px;
+    position: absolute;
+    left: 250px;
+    width: 1500px;
+  }
