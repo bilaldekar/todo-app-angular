@@ -8,4 +8,4 @@ Run `npm install` in the project path to install necessary dependencies
 
 ## Development server
 
-Run `ng serve -o` to run and open the app in the navigator `http://localhost:4200/`. 
+Run `ng serve -o` to run the app, the navigator will automatically open : `http://localhost:4200/myday`. 
