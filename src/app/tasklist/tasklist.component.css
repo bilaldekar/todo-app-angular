@@ -1,40 +1,35 @@
-
-
 .rmBtn {
-    background: transparent; 
-    border: none; 
-    color: tomato
+  background: transparent;
+  border: none;
+  color: tomato;
+  margin-left: 5px;
 }
-
 
 .rmBtn:enabled:hover {
-    background: transparent; 
-    border: none; 
-    color: tomato
+  background: transparent;
+  border: none;
+  color: tomato;
 }
 
-.adBtn{
-    background: transparent; 
-    color: blue;
-    border: 1px solid transparent;
+.adBtn {
+  background: transparent;
+  color: blue;
+  border: 1px solid transparent;
 }
 
-
-.adBtn:enabled:hover{
-    background:aliceblue; 
-    color: blue;
-    border: 1px solid transparent;
-    height: 40px;
+.adBtn:enabled:hover {
+  background: aliceblue;
+  color: blue;
+  border: 1px solid transparent;
+  height: 40px;
 }
 
-.newtask{
-    border: none;  
-    font-size: 18px;
-    margin-left: 0%;
-    padding-left: 0%;
+.newtask {
+  border: none;
+  font-size: 18px;
+  padding-left: 0%;
 }
 
-
-#a:checked + #b {
+::ng-deep .ui-label-active  {
     text-decoration: line-through;
-}
+  }

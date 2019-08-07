@@ -1,18 +1,29 @@
 import { Injectable } from '@angular/core';
 import { Task } from './task';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class TaskService {
 
-    importants: string[];
-    tasks: Task[];
+    public number = new BehaviorSubject(null);
+    public taskList = new BehaviorSubject(null);
 
     constructor() {
     }
 
-    public getTasks() {
+
+    /*public getTasks() {
         let localStorageItem = JSON.parse(localStorage.getItem('tasks'));
         return localStorageItem == null ? [] : localStorageItem.tasks;
+    }*/
+
+    public getTasks(): Task[] {
+        let localStorageItem = JSON.parse(localStorage.getItem('tasks'));
+        if (localStorageItem != null) {
+            this.taskList.next(localStorageItem.tasks);
+            return localStorageItem.tasks;
+        }
+        //return localStorageItem == null ? [] : localStorageItem.tasks;
     }
 
     private setLocalStorageTasks(tasks: Task[]): void {
@@ -21,8 +32,9 @@ export class TaskService {
 
     public addTask(newtask: string) {
         let tasks = this.getTasks();
-        tasks.push({ name: newtask, important: false });
+        tasks.push({ name: newtask, important: false, done: false });
         this.setLocalStorageTasks(tasks);
+        this.setTaskNumber(this.getTasks().length);
     }
 
 
@@ -69,4 +81,32 @@ export class TaskService {
         this.setLocalStorageTasks(tasks);
     }
 
+
+
+    setTaskNumber(num: number) {
+        this.number.next(num);
+    }
+
+    
+    public setDone(task: Task) {
+        let tasks = this.getTasks();
+        tasks.forEach(element => {
+            if(element.name == task.name){
+                console.log('-------> '+element.name);
+                element.done=true;
+            }
+        });
+        this.setLocalStorageTasks(tasks);
+    }
+
+    public setUndone(task:Task){
+        let tasks = this.getTasks();
+        tasks.forEach(element => {
+            if(element.name == task.name){
+                console.log('-------> '+element.name);
+                element.done=false;
+            }
+        });
+        this.setLocalStorageTasks(tasks);
+    }
 }

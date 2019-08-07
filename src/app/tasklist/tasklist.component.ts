@@ -13,12 +13,14 @@ export class TasklistComponent implements OnInit {
     today: string;
     tasks: Task[];
     task: any;
-    error : boolean;
+    error: boolean;
 
     @ViewChild('newtask') newtask: ElementRef;
 
     constructor(public datepipe: DatePipe, private taskService: TaskService) {
-        this.tasks = this.taskService.getTasks();
+        this.taskService.getTasks();
+        this.taskService.taskList.subscribe((res: []) => this.tasks = res);
+        taskService.setTaskNumber(this.tasks.length);
     }
 
     ngOnInit(): void {
@@ -46,13 +48,19 @@ export class TasklistComponent implements OnInit {
 
     switchImportant(task: Task) {
         if (task.important) {
-            console.log(task.important);
             this.taskService.addImportant(task.name);
         }
         if (!task.important) {
-            console.log(task.important);
             this.taskService.removeImportant(task.name);
         }
+    }
+
+    done(task: Task) {
+        this.taskService.setDone(task);
+    }
+
+    undone(task: Task) {
+        this.taskService.setUndone(task);
     }
 
 }

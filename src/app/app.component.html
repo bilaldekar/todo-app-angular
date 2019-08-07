@@ -1,15 +1,25 @@
-<div >
+<div class="searchDiv">
 
-  <div class="ui-g ui-g-nopad" id="body" >
-    <div class="ui-g-2 ui-g-nopad" id="side-menu"  >
-      <div id="sidenav">
-        <p-menu [model]="items" ></p-menu>
-      </div>
-    </div>
+  <input type="text" name="search" [(ngModel)]="param" pInputText placeholder="Quick find" (keyup.enter)="filter()"
+    class="searchInput">
 
-    <div id="content-body" class="ui-g-10 ui-g-nopad">
-      <router-outlet></router-outlet>
-    </div>
+  <span class="spanTask">
+    <img src="assets/img/info.png" height="24" width="24" class="image">
+    <span style="margin-left: 88px; color:#25B7D3;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 17px;">{{number}} tasks</span>
+  </span>
+
+  <p-button class="boutoun" label="Done" icon="pi pi-replay"> </p-button>
+</div>
+
+<div class="ui-g-12" id="body">
+  <div class="ui-g-1">
   </div>
 
+  <div class="ui-g-2" id="side-menu">
+    <p-menu [model]="items"></p-menu>
+  </div>
+
+  <div class="ui-g-8">
+    <router-outlet></router-outlet>
+  </div>
 </div>
