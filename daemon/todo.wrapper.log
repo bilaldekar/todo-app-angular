@@ -1,6 +1,0 @@
-2019-08-06 10:38:30 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\bilal.dekar\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\work\todo-app\todo.js --log "todo wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
-2019-08-06 10:38:30 - Started 13924
-2019-08-06 10:38:45 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\bilal.dekar\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\work\todo-app\todo.js --log "todo wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
-2019-08-06 10:38:45 - Started 1324
-2019-08-06 10:40:27 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\bilal.dekar\AppData\Roaming\npm\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file C:\work\todo-app\todo.js --log "todo wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
-2019-08-06 10:40:27 - Started 5844
