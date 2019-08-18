@@ -12,7 +12,7 @@
 
     <div class="ui-g-12" *ngFor="let t of tasks">
       <div class="ui-g-11" style="padding: 0%;margin: 0%">
-        <p-checkbox  [(ngModel)]="t.done" label="{{t.name}} {{t.done}}" binary="true" (onChange)="t.done ? done(t) : undone(t)" > </p-checkbox>
+        <p-checkbox  [(ngModel)]="t.done" label="{{t.name}}" binary="true" (onChange)="t.done ? done(t) : undone(t)" > </p-checkbox>
       </div>
       <div class="ui-g-1" style="padding: 0%;margin: 0%">
         <p-inputSwitch [(ngModel)]="t.important" (onChange)="switchImportant(t)"> </p-inputSwitch>

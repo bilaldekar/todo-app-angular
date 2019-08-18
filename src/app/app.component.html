@@ -5,10 +5,13 @@
 
   <span class="spanTask">
     <img src="assets/img/info.png" height="24" width="24" class="image">
-    <span style="margin-left: 88px; color:#25B7D3;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 17px;">{{number}} tasks</span>
+    <span
+      style="margin-left: 88px; color:#25B7D3;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 17px;">{{number}}
+      tasks</span>
   </span>
 
-  <p-button class="boutoun" label="Done" icon="pi pi-replay"> </p-button>
+  <p-button type="button" (click)="confirm()" class="boutoun" label="Done" icon="pi pi-replay"> </p-button>
+  <p-confirmDialog [style]="{width: '30vw'}" acceptLabel="Ok" rejectLabel="Cancel" ></p-confirmDialog>
 </div>
 
 <div class="ui-g-12" id="body">

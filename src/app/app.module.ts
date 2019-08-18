@@ -22,7 +22,7 @@ import { FormsModule } from '@angular/forms';
 import {MenubarModule} from 'primeng/menubar';
 import {InputTextModule} from 'primeng/inputtext';
 import { ArchiveComponent } from './archive/archive.component';
-
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
 
 
 @NgModule({
@@ -44,7 +44,8 @@ import { ArchiveComponent } from './archive/archive.component';
     InputSwitchModule,
     CheckboxModule,
     MenubarModule,
-    InputTextModule
+    InputTextModule,
+    ConfirmDialogModule
   ],
   providers: [DatePipe, TaskService],
   bootstrap: [AppComponent]

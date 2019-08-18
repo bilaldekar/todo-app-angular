@@ -19,8 +19,8 @@ export class TasklistComponent implements OnInit {
 
     constructor(public datepipe: DatePipe, private taskService: TaskService) {
         this.taskService.getTasks();
-        this.taskService.taskList.subscribe((res: []) => this.tasks = res);
-        taskService.setTaskNumber(this.tasks.length);
+        this.taskService.taskList.subscribe((res: []) => this.tasks = res.filter((t: Task) => { return !t.archive }));
+        taskService.refreshTaskNumber();
     }
 
     ngOnInit(): void {
@@ -31,7 +31,6 @@ export class TasklistComponent implements OnInit {
         if (newtask != null && newtask != '') {
             if (!this.tasks.some(el => el.name === newtask)) {
                 this.taskService.addTask(newtask);
-                this.tasks = this.taskService.getTasks();
                 this.newtask.nativeElement.value = '';
                 this.error = false;
             } else {
@@ -48,10 +47,10 @@ export class TasklistComponent implements OnInit {
 
     switchImportant(task: Task) {
         if (task.important) {
-            this.taskService.addImportant(task.name);
+            this.taskService.addImportant(task);
         }
         if (!task.important) {
-            this.taskService.removeImportant(task.name);
+            this.taskService.removeImportant(task);
         }
     }
 

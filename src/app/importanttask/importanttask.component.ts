@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../task.service';
+import { Task } from '../task';
 
 @Component({
   selector: 'app-importanttask',
@@ -8,12 +9,10 @@ import { TaskService } from '../task.service';
 })
 export class ImportanttaskComponent implements OnInit {
 
-  impotantTasks: string[];
+  impotantTasks: Task[];
 
   constructor(private myService: TaskService) {
-    this.impotantTasks = [];
     this.impotantTasks = this.myService.getImportantTasks();
-    console.log(this.impotantTasks.length);
   }
 
   ngOnInit() {
