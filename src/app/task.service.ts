@@ -13,9 +13,7 @@ export class TaskService {
 
     public getTasks(): Task[] {
         let localStorageItem = JSON.parse(localStorage.getItem('tasks'));
-        if (localStorageItem != null) {
-            return localStorageItem.tasks;
-        }
+        return localStorageItem != null ?  localStorageItem.tasks :  [];        
     }
 
     private setLocalStorageTasks(tasks: Task[]): void {
