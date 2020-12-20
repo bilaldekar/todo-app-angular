@@ -15,7 +15,7 @@ export class TasklistComponent implements OnInit {
     task: any;
     error: boolean;
 
-    @ViewChild('newtask') newtask: ElementRef;
+    @ViewChild('newtask', { static: true }) newtask: ElementRef;
 
     constructor(public datepipe: DatePipe, private taskService: TaskService) {
         this.taskService.getTasks();
