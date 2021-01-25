@@ -2,23 +2,25 @@
 
 <div class="p-grid" id="header">
 
-  <div class="p-col-8">
+  <div class="p-col-9">
     <input type="text" name="search" [(ngModel)]="param" pInputText placeholder="Quick find" (keyup.enter)="filter()"
       class="searchInput">
   </div>
 
-  <div id="rightDiv" class="p-col-4">
-    <span class="spanTask">
-      <img src="assets/img/info.png" height="24" width="24" class="image">
-      <span
-        style="margin-left: 88px; color:#cd1414;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;">{{number}}
+  <div id="rightDiv" class="p-col-3">
+
+    <!-- <span class="spanTask">
+      <img src="assets/img/info.png" height="20" width="20" class="image">
+      <span style="color:#cd1414;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+        {{number}}
         tasks
       </span>
-    </span>
+    </span> -->
 
     <button pButton pRipple type="button" (click)="confirm()" class="boutoun" label="Clear"
-      class="p-button-secondary p-button-text" icon="pi pi-replay">
+      class="p-button-secondary p-button-text clear" icon="pi pi-replay">
     </button>
+
   </div>
 
 
@@ -27,10 +29,12 @@
 <div class="ui-g ui-g-nopad">
   <div class="ui-g-2 ui-g-nopad" id="sidebar">
 
-    <div class="appTitle">
-      <span class="unselectable">
-        To Do
-      </span>
+    <div class="p-grid appTitle">
+      <div class="unselectable p-col-4">
+        <img src="assets/img/check.svg" height="42" width="42">
+      </div>
+      <div class="p-col-8" style="margin-top: 8px;">to do</div>
+
     </div>
 
     <p-menu [model]="items" styleClass="menu"></p-menu>

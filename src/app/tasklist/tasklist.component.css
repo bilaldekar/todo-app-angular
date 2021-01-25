@@ -33,3 +33,9 @@
 ::ng-deep .ui-label-active  {
     text-decoration: line-through;
   }
+
+
+  .panel{    
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+  }
