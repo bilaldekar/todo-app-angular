@@ -1,28 +1,44 @@
-<div class="searchDiv">
+<p-confirmDialog [style]="{width: '30vw'}" acceptLabel="Ok" rejectLabel="Cancel"></p-confirmDialog>
 
-  <input type="text" name="search" [(ngModel)]="param" pInputText placeholder="Quick find" (keyup.enter)="filter()"
-    class="searchInput">
+<div class="p-grid" id="header">
 
-  <span class="spanTask">
-    <img src="assets/img/info.png" height="24" width="24" class="image">
-    <span
-      style="margin-left: 88px; color:#cd1414;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;">{{number}}
-      tasks</span>
-  </span>
+  <div class="p-col-8">
+    <input type="text" name="search" [(ngModel)]="param" pInputText placeholder="Quick find" (keyup.enter)="filter()"
+      class="searchInput">
+  </div>
 
-  <p-button type="button" (click)="confirm()" class="boutoun" label="Clear" icon="pi pi-replay"> </p-button>
-  <p-confirmDialog [style]="{width: '30vw'}" acceptLabel="Ok" rejectLabel="Cancel" ></p-confirmDialog>
+  <div id="rightDiv" class="p-col-4">
+    <span class="spanTask">
+      <img src="assets/img/info.png" height="24" width="24" class="image">
+      <span
+        style="margin-left: 88px; color:#cd1414;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;">{{number}}
+        tasks
+      </span>
+    </span>
+
+    <button pButton pRipple type="button" (click)="confirm()" class="boutoun" label="Clear"
+      class="p-button-secondary p-button-text" icon="pi pi-replay">
+    </button>
+  </div>
+
+
 </div>
 
-<div class="ui-g-12" id="body">
-  <div class="ui-g-1">
+<div class="ui-g ui-g-nopad">
+  <div class="ui-g-2 ui-g-nopad" id="sidebar">
+
+    <div class="appTitle">
+      <span class="unselectable">
+        To Do
+      </span>
+    </div>
+
+    <p-menu [model]="items" styleClass="menu"></p-menu>
+
   </div>
 
-  <div class="ui-g-2" id="side-menu">
-    <p-menu [model]="items"></p-menu>
-  </div>
-
-  <div class="ui-g-8">
+  <div id="main" class="ui-g-10 ui-g-nopad" style="margin:  25px 0 0 10px">
     <router-outlet></router-outlet>
   </div>
+
 </div>

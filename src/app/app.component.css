@@ -24,13 +24,14 @@
   font-size: 14px;
   -webkit-transition: background-color 0.2s, box-shadow 0.2s;
   transition: background-color 0.2s, box-shadow 0.2s;
-  height: 50;
-  margin-left: 50px;
-  margin-right: 40px;
+  /* height: 50; */
+  /* margin-left: 30px; */
+  /* margin-right: 40px; */
   position: relative;
-  height: 24px;
-  width: 45px;
+  /* height: 24px; */
+  /* width: 45px; */
 }
+
 .image {
   position: absolute;
   top: 50%;
@@ -39,9 +40,6 @@
   transform: translate(-50%, -50%);
 }
 .boutoun {
-  margin-left: 0.25em;
-  position: inherit;
-  float: right;
   background-color: #F4F4F4;
 }
 .searchDiv {
@@ -51,5 +49,168 @@
 }
 .searchInput {
   width: 440px;
+  margin-top: 5px;
 }
 
+
+
+
+#header {
+  background-color: #F0F3F5;
+  height: 80px;
+  position: absolute;
+  top: 0px;
+  z-index: 99;
+  width: 85%;
+  padding-top: 10px;
+  padding-left: 20px;
+  /* margin-left: 190px; */
+  transition: 0.5s;
+}
+
+#footer {
+  background-color: transparent;
+  height: 10px;
+  position: fixed;
+  bottom: 0px;
+  z-index: 99;
+  width: 100%;
+}
+
+#copyright {
+  color: slategray;
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 12px;
+}
+
+#top-logo {
+  height: 60px;
+}
+
+#help {
+  color: blue;
+  float: right;
+}
+
+:host ::ng-deep .ui-button-text {
+  margin-right: 5px !important;
+}
+
+:host ::ng-deep .ui-button-text {
+  margin-left: 5px !important;
+}
+
+#content-body {
+  padding-top: 55px;
+  position: absolute;
+  left: 190px;
+}
+
+#main {
+  transition: margin-left .5s;
+  /* If you want a transition effect */
+  padding: 20px;
+  padding-top: 55px;
+  width: 85%;
+  /* margin-left: 210px ; */
+
+}
+
+
+.appTitle {
+  margin-left: 60px;
+  margin-bottom: 14px;
+  margin-top: 10px;
+  font-size: 24px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+  color: #F0F3F5;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+
+#sidebar {
+  height: 100%;
+  width: 190px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #2D353C !important;
+  overflow-x: hidden;
+  padding-top: 12px;
+  transition: 0.5s;
+}
+
+
+@media only screen and (max-width: 1000px) {
+  #sidebar {
+    display: none;
+  }
+
+  #main {
+    margin-left: 0 !important;
+  }
+
+  #header {
+    margin-left: 0 !important;
+    width: 85% !important;
+  }
+}
+
+
+#rightDiv {
+  float: right;
+
+}
+
+#userButton {
+  list-style-type: none;
+  height: 10px;
+}
+
+#navbardrop {
+  color: black;
+  margin-right: 10px;
+  min-width: 170px;
+  max-width: 300px;
+  height: 60px;
+}
+
+#dropdownMenu {
+  float: left;
+  margin-top: 45px;
+  margin-right: 30px;
+}
+
+
+#dropdownItem {
+  margin: 5px;
+  margin-left: 0;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headerIcon {
+  margin: 7px 5px 5px 5px;
+  color: #444e56;
+}
+
+
+
+:host ::ng-deep .menu {
+  width: 190px !important;
+  margin-top: 20px !important;
+}

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { MenuItem, ConfirmationService, Message } from 'primeng/api';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MenuItem, ConfirmationService, Message } from 'primeng-lts/api';
 import { TaskService } from './task.service';
 import { Task } from './task';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,10 @@ export class AppComponent implements OnInit {
   param: string;
   taksss: Task[];
 
-  constructor(private taskService: TaskService, private confirmationService: ConfirmationService) {
+  elem;
+  navOpened: any = true;
+
+  constructor(private taskService: TaskService, private confirmationService: ConfirmationService, @Inject(DOCUMENT) private document: any) {
     this.taskService.number.subscribe((res: number) => this.number = res);
   }
 
@@ -32,6 +36,14 @@ export class AppComponent implements OnInit {
 
     this.taksss = this.taskService.getTasks();
     this.taskService.taskList.next(this.taksss);
+
+
+    this.elem = document.documentElement;
+    this.document.getElementById("sidebar").style.width = "190px";
+    this.document.getElementById("main").style.marginLeft = "190px";
+    this.document.getElementById("header").style.marginLeft = "190px";
+    this.document.getElementById("header").style.width = "85%";
+    this.navOpened = true;
   }
 
   filter() {

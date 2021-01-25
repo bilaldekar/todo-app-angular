@@ -1,44 +1,44 @@
-<p-panel header="My day" class="ui-g-10">
-  <div class="ui-g" style="width: 830px">
+<p-panel header="My day">
+  <!-- <div class="p-col" style="width: 830px"> -->
 
-    <div class="ui-g-12">
-      <div class="ui-g-1" style="padding-top: 11px; padding-left: 0%">
-        <img src="assets/img/plus.png" height="42" width="42">
-      </div>
-      <div class="ui-g-10" style="padding-top: 0%">
-        <h2 id="title"> {{today}} </h2>
-      </div>
+  <div class="p-grid">
+    <div class="p-col-1" style="padding-top: 11px; padding-left: 0%">
+      <img src="assets/img/plus.png" height="42" width="42">
     </div>
-
-    <div class="ui-g-12" *ngFor="let t of tasks">
-      <div class="ui-g-11" style="padding: 0%;margin: 0%">
-        <p-checkbox  [(ngModel)]="t.done" label="{{t.name}}" binary="true" (onChange)="t.done ? done(t) : undone(t)" > </p-checkbox>
-      </div>
-      <div class="ui-g-1" style="padding: 0%;margin: 0%">
-        <p-inputSwitch [(ngModel)]="t.important" (onChange)="switchImportant(t)"> </p-inputSwitch>
-      </div>
-      <div class="ui-g-12" *ngIf="tasks.indexOf(t)!=tasks.length-1" style="padding: 0%; margin-top: 8px">
-        <hr>
-      </div>
-    </div>
-
-    <div class="ui-g-12">
-      <div class="ui-inputgroup">
-        <input #newtask [(ngModel)]="task" name="task" type="text" pInputText placeholder="New Todo"
-          class="ui-g-10 ui-md-11 newtask" (keyup.enter)="add(newtask.value)">
-
-      </div>
-      <div>
-        <span *ngIf="error" style="color: tomato;">
-          todo already added
-        </span>
-      </div>
-      <div style="margin-top: 8px">
-        <button pButton type="button" label="Add todo" (click)="add(newtask.value)" *ngIf="task"></button>
-        <button pButton type="button" label="Cancel" class="rmBtn" (click)="remove()" *ngIf="task"
-          style="margin-right: 15px"></button>
-      </div>
+    <div class="p-col-10" style="padding-top: 0%">
+      <h2 id="title"> {{today}} </h2>
     </div>
   </div>
-</p-panel>
 
+  <div class="p-grid" *ngFor="let t of tasks" style="padding: 0%; margin-top: 8px">
+    <div class="p-col-11" style="padding: 0%;margin: 0%">
+      <p-checkbox [(ngModel)]="t.done" label="{{t.name}}" binary="true" (onChange)="t.done ? done(t) : undone(t)">
+      </p-checkbox>
+    </div>
+    <div class="p-col-1" style="padding: 0%;margin: 0%">
+      <p-inputSwitch [(ngModel)]="t.important" (onChange)="switchImportant(t)"> </p-inputSwitch>
+    </div>
+    <!-- <div class="p-grid" *ngIf="tasks.indexOf(t)!=tasks.length-1" style="padding: 0%; margin-top: 8px">
+      <hr>
+    </div> -->
+  </div>
+
+  <div class="p-grid">
+    <div class="ui-inputgroup">
+      <input #newtask [(ngModel)]="task" name="task" type="text" pInputText placeholder="New Todo"
+        class="p-col-10 ui-md-11 newtask" (keyup.enter)="add(newtask.value)">
+
+    </div>
+    <div>
+      <span *ngIf="error" style="color: tomato;">
+        todo already added
+      </span>
+    </div>
+    <div style="margin-top: 8px">
+      <button pButton type="button" label="Add todo" (click)="add(newtask.value)" *ngIf="task"></button>
+      <button pButton type="button" label="Cancel" class="rmBtn" (click)="remove()" *ngIf="task"
+        style="margin-right: 15px"></button>
+    </div>
+  </div>
+  <!-- </div> -->
+</p-panel>

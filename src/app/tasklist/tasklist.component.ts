@@ -19,7 +19,8 @@ export class TasklistComponent implements OnInit {
 
     constructor(public datepipe: DatePipe, private taskService: TaskService) {
         this.taskService.getTasks();
-        this.taskService.taskList.subscribe((res: []) => this.tasks = res.filter((t: Task) => { return !t.archive }));
+        this.taskService.taskList.subscribe(
+            (res: []) => this.tasks = res.filter((t: Task) => { return !t.archive }));
         taskService.refreshTaskNumber();
     }
 
