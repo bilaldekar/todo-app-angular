@@ -25,6 +25,12 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    if (!localStorage.getItem('tasks')) {
+      localStorage.setItem('tasks', '{"tasks":[]}');
+    }
+
+
     this.items = [{
       label: 'Todo Application',
       items: [
