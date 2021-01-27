@@ -1,8 +1,8 @@
-<p-panel header="My day" styleClass="panel">
+<p-panel header="My day">
   <div style="padding-left: 30px;padding-right: 30px">
 
     <div class="p-grid">
-      <div class="p-col-1" style="padding-top: 14px; padding-left: 0%">
+      <div style="padding-top: 14px; padding-left: 0%; margin-right: 5px;">
         <img src="assets/img/plus.png" height="42" width="42">
       </div>
       <div class="p-col-10" style="padding-top: 0%">
@@ -12,7 +12,8 @@
 
     <div class="p-grid" *ngFor="let t of tasks" style="padding: 0%; margin-top: 8px">
       <div class="p-col-11" style="padding: 0%;margin: 0%">
-        <p-checkbox [(ngModel)]="t.done" label="{{t.name}}" binary="true" (onChange)="t.done ? done(t) : undone(t)">
+        <p-checkbox [(ngModel)]="t.done" label="{{t.name}}" binary="true" (onChange)="t.done ? done(t) : undone(t)"
+          style="margin-left: 10px;">
         </p-checkbox>
       </div>
       <div class="p-col-1" style="padding: 0%;margin: 0%">
@@ -21,7 +22,7 @@
       <hr *ngIf="tasks.indexOf(t)!=tasks.length-1" style="padding: 0%; margin-top: 8px">
     </div>
 
-    <div class="p-grid" style="margin-top: 15px;margin-left: 12px;">
+    <div class="p-grid" style="margin-top: 15px;margin-left: 22px;">
       <div class="ui-inputgroup">
         <input #newtask [(ngModel)]="task" name="task" type="text" pInputText placeholder="New todo" size="50"
           class="p-col-10 ui-md-11" (keyup.enter)="add(newtask.value)">
