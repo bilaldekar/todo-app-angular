@@ -32,11 +32,11 @@ export class AppComponent implements OnInit {
 
 
     this.items = [{
-      label: 'Todo Application',
+      label: 'Tasks',
       items: [
-        { label: 'My Day', routerLink: ['/myday'], icon: 'pi pi-align-justify' },
+        { label: 'Todo', routerLink: ['/myday'], icon: 'pi pi-align-justify' },
         { label: 'Important', routerLink: ['/important'], icon: 'pi pi-star-o' },
-        { label: 'Archive', routerLink: ['/archive'], icon: 'pi pi-check' }
+        { label: 'Done', routerLink: ['/archive'], icon: 'pi pi-check' }
       ]
     }]
 
@@ -74,7 +74,7 @@ export class AppComponent implements OnInit {
     this.confirmationService.confirm({
       message: 'This will archive the done tasks',
       header: 'Confirmation',
-      icon: 'pi pi-replay',
+      icon: 'pi pi-check-circle',
       accept: () => {
         this.archive();
       }

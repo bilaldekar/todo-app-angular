@@ -2,7 +2,7 @@
   <div style="padding-left: 30px;padding-right: 30px">
 
     <div class="p-grid">
-      <div class="p-col-1" style="padding-top: 11px; padding-left: 0%">
+      <div class="p-col-1" style="padding-top: 14px; padding-left: 0%">
         <img src="assets/img/plus.png" height="42" width="42">
       </div>
       <div class="p-col-10" style="padding-top: 0%">
@@ -34,9 +34,9 @@
           todo already added
         </span>
       </div>
-      <div>
-        <button pButton type="button" label="Add" (click)="add(newtask.value)" icon="pi pi-plus" *ngIf="task"></button>
-        <button pButton type="button" label="Cancel" class="rmBtn" (click)="remove()" *ngIf="task"
+      <div *ngIf="task" class="adBtn">
+        <button pButton type="button" label="Add" (click)="add(newtask.value)" icon="pi pi-plus"></button>
+        <button pButton type="button" label="Cancel" class="rmBtn" (click)="remove()"
           style="margin-right: 15px"></button>
       </div>
     </div>

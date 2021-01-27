@@ -3,6 +3,7 @@
   border: none;
   color: tomato;
   margin-left: 5px;
+  transition: 0.5s;
 }
 
 .rmBtn:enabled:hover {
@@ -12,6 +13,10 @@
 }
 
 .adBtn {
+  transition: 0.5s;
+}
+
+/* .adBtn {
   background: transparent;
   color: blue;
   border: 1px solid transparent;
@@ -22,7 +27,7 @@
   color: blue;
   border: 1px solid transparent;
   height: 40px;
-}
+} */
 
 .newtask {
   border: none;
