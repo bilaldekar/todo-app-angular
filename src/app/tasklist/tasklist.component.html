@@ -18,26 +18,25 @@
       <div class="p-col-1" style="padding: 0%;margin: 0%">
         <p-inputSwitch [(ngModel)]="t.important" (onChange)="switchImportant(t)"> </p-inputSwitch>
       </div>
-      <!-- <div class="p-grid" *ngIf="tasks.indexOf(t)!=tasks.length-1" style="padding: 0%; margin-top: 8px">
-      <hr>
-    </div> -->
+      <hr *ngIf="tasks.indexOf(t)!=tasks.length-1" style="padding: 0%; margin-top: 8px">
     </div>
 
-    <div class="p-grid" style="margin-top: 15px;">
+    <div class="p-grid" style="margin-top: 15px;margin-left: 12px;">
       <div class="ui-inputgroup">
-        <input #newtask [(ngModel)]="task" name="task" type="text" pInputText placeholder="New Todo"
-          class="p-col-10 ui-md-11 newtask" (keyup.enter)="add(newtask.value)">
+        <input #newtask [(ngModel)]="task" name="task" type="text" pInputText placeholder="New todo" size="50"
+          class="p-col-10 ui-md-11" (keyup.enter)="add(newtask.value)">
 
-      </div>
-      <div>
-        <span *ngIf="error" style="color: tomato;">
-          todo already added
-        </span>
+        <div>
+          <span *ngIf="error" style="color: tomato;margin-right: 10px;margin-top: 10px;font-size: 12px;">
+            Todo already exists
+          </span>
+        </div>
       </div>
       <div *ngIf="task" class="adBtn">
-        <button pButton type="button" label="Add" (click)="add(newtask.value)" icon="pi pi-plus"></button>
-        <button pButton type="button" label="Cancel" class="rmBtn" (click)="remove()"
-          style="margin-right: 15px"></button>
+        <button pButton type="button" label="Add" (click)="add(newtask.value)" icon="pi pi-plus"
+          class="p-button-rounded"></button>
+        <button pButton type="button" label="Cancel" class="rmBtn" (click)="remove()" style="margin-left: 10px"
+          class="p-button-outlined p-button-rounded"></button>
       </div>
     </div>
   </div>

@@ -1,12 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
-body .ui-listbox .ui-listbox-list .ui-listbox-item.ui-state-highlight {
+body .p-listbox .p-listbox-list .p-listbox-item.p-state-highlight {
   color: #000000;
   text-decoration: line-through;
   background-color: inherit;
 }
 
-body .ui-panel .ui-panel-titlebar {
+body .p-panel .p-panel-titlebar {
   font-size: 25px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
@@ -16,9 +16,9 @@ body .ui-panel .ui-panel-titlebar {
   font-style: italic;
 }
 
-body .ui-chkbox-label:checked {
+body .p-label-active {
   margin: 0 0 0 0.5em;
-  text-decoration: line-through;
+  text-decoration: line-through !important;
 }
 
 hr {

@@ -45,9 +45,9 @@ export class AppComponent implements OnInit {
 
 
     this.elem = document.documentElement;
-    this.document.getElementById("sidebar").style.width = "190px";
-    this.document.getElementById("main").style.marginLeft = "190px";
-    this.document.getElementById("header").style.marginLeft = "190px";
+    this.document.getElementById("sidebar").style.width = "197px";
+    this.document.getElementById("main").style.marginLeft = "197px";
+    this.document.getElementById("header").style.marginLeft = "183px";
     this.document.getElementById("header").style.width = "85%";
     this.navOpened = true;
   }

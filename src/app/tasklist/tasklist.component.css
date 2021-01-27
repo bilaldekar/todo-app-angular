@@ -29,18 +29,18 @@
   height: 40px;
 } */
 
-.newtask {
-  border: none;
-  font-size: 18px;
-  padding-left: 0%;
-}
 
-::ng-deep .ui-label-active  {
-    text-decoration: line-through;
+::ng-deep .p-label-active {
+    text-decoration: line-through !important;
   }
 
 
   .panel{    
     padding-left: 50px !important;
     padding-right: 50px !important;
+  }
+
+
+  :host ::ng-deep .p-label-active {
+    text-decoration: line-through !important;
   }
