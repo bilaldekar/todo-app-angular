@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
+
 body .p-listbox .p-listbox-list .p-listbox-item.p-state-highlight {
   color: #000000;
   text-decoration: line-through;
@@ -35,6 +36,7 @@ hr {
   border: none;
   color: tomato;
 }
+
 .rmBtn:enabled:hover {
   background: transparent;
   border: none;
@@ -48,5 +50,3 @@ hr {
   margin-left: 0%;
   padding-left: 0%;
 }
-
-

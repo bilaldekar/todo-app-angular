@@ -16,31 +16,13 @@
   transition: 0.5s;
 }
 
-/* .adBtn {
-  background: transparent;
-  color: blue;
-  border: 1px solid transparent;
+.panel {
+  padding-left: 50px !important;
+  padding-right: 50px !important;
 }
 
-.adBtn:enabled:hover {
-  background: aliceblue;
-  color: blue;
-  border: 1px solid transparent;
-  height: 40px;
-} */
 
-
-::ng-deep .p-label-active {
-    text-decoration: line-through !important;
-  }
-
-
-  .panel{    
-    padding-left: 50px !important;
-    padding-right: 50px !important;
-  }
-
-
-  :host ::ng-deep .p-label-active {
-    text-decoration: line-through !important;
-  }
+:host ::ng-deep .p-label-active {
+  text-decoration: line-through !important;
+  color: red !important;
+}

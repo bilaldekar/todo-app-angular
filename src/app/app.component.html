@@ -1,10 +1,34 @@
-<p-confirmDialog [style]="{width: '30vw'}" acceptLabel="Ok" rejectLabel="Cancel"></p-confirmDialog>
+<p-confirmDialog [style]="{'width': '30vw'}" acceptLabel="Ok" rejectLabel="Cancel"></p-confirmDialog>
 
 <div class="p-grid" id="header">
 
-  <div class="p-col-9">
+  <div class="p-col-1">
+    <button pButton type="button" (click)="openNav()" class="p-button-text p-button-plain" icon="pi pi-align-justify"
+      *ngIf="!navOpened" style="margin-top: 5px;">
+    </button>
+
+    <button pButton type="button" (click)="closeNav()" class="p-button-text p-button-plain" icon="pi pi-align-justify"
+      *ngIf="navOpened" style="margin-top: 5px;">
+    </button>
+  </div>
+
+  <div class="p-col-7">
     <input type="text" name="search" [(ngModel)]="param" pInputText placeholder="Quick find" (keyup.enter)="filter()"
       class="searchInput">
+  </div>
+
+  <div class="p-col-1">
+    <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" (click)="openFullscreen()"
+      style="color: black; height: 60px;" class="nav-link dropdown-toggle btn-link" aria-expanded="false"
+      title="Full Screen" *ngIf="!isFullScreen">
+      <i class="pi pi-window-maximize headerIcon"></i>
+    </a>
+
+    <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" (click)="closeFullscreen()"
+      style="color: black; height: 60px;" class="nav-link dropdown-toggle btn-link" aria-expanded="false"
+      title="Exit Full Screen" *ngIf="isFullScreen">
+      <i class="pi pi-window-minimize headerIcon"></i>
+    </a>
   </div>
 
 
@@ -13,7 +37,7 @@
 
       <img src="assets/img/info.png" height="20" width="20" class="image">
       <span
-        style="color:#cd1414;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;margin-left: 20px;">
+        style="color:#cd1414;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 16px;margin-left: 15px;">
         {{number}} tasks
       </span>
 

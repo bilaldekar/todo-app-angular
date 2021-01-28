@@ -13,7 +13,7 @@
     <div class="p-grid" *ngFor="let t of tasks" style="padding: 0%; margin-top: 8px">
       <div class="p-col-11" style="padding: 0%;margin: 0%">
         <p-checkbox [(ngModel)]="t.done" label="{{t.name}}" binary="true" (onChange)="t.done ? done(t) : undone(t)"
-          style="margin-left: 10px;">
+          [style]="{'margin-left': '10px;'}">
         </p-checkbox>
       </div>
       <div class="p-col-1" style="padding: 0%;margin: 0%">
@@ -36,7 +36,7 @@
       <div *ngIf="task" class="adBtn">
         <button pButton type="button" label="Add" (click)="add(newtask.value)" icon="pi pi-plus"
           class="p-button-rounded"></button>
-        <button pButton type="button" label="Cancel" class="rmBtn" (click)="remove()" style="margin-left: 10px"
+        <button pButton type="button" label="Cancel" class="rmBtn" (click)="remove()" [style]="{'margin-left': '10px'}"
           class="p-button-outlined p-button-rounded"></button>
       </div>
     </div>

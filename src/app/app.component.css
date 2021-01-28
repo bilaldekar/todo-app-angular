@@ -12,11 +12,11 @@
   left: 250px;
 }
 
-:host >>> .ui-menu {
+:host>>>.ui-menu {
   width: 250px;
 }
 
-:host >>> .ui-menubar {
+:host>>>.ui-menubar {
   border: 0px none transparent;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .clear {
-  margin-top:5px;
+  margin-top: 5px;
   margin-left: 20px;
 }
 
@@ -45,14 +45,17 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+
 .boutoun {
   background-color: #F4F4F4;
 }
+
 .searchDiv {
   margin-top: 20px;
   margin-left: 450px;
   width: 800px;
 }
+
 .searchInput {
   width: 440px;
   margin-top: 5px;
@@ -142,7 +145,7 @@
 
 #sidebar {
   height: 100%;
-  width: 190px;
+  width: 197px;
   position: fixed;
   z-index: 10000;
   top: 0;
@@ -212,7 +215,7 @@
 }
 
 .headerIcon {
-  margin: 7px 5px 5px 5px;
+  margin: 15px 5px 5px 5px;
   color: #444e56;
 }
 
