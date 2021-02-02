@@ -23,6 +23,7 @@ import { MenubarModule } from 'primeng-lts/menubar';
 import { InputTextModule } from 'primeng-lts/inputtext';
 import { ArchiveComponent } from './archive/archive.component';
 import { ConfirmDialogModule } from 'primeng-lts/confirmdialog';
+import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { ConfirmDialogModule } from 'primeng-lts/confirmdialog';
     CheckboxModule,
     MenubarModule,
     InputTextModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    LoadingBarRouterModule
   ],
   providers: [DatePipe, TaskService],
   bootstrap: [AppComponent]
