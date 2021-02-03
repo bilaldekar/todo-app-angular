@@ -46,13 +46,15 @@ export class TasklistComponent implements OnInit {
         this.error = false;
     }
 
-    switchImportant(task: Task) {
-        if (task.important) {
-            this.taskService.addImportant(task);
-        }
-        if (!task.important) {
-            this.taskService.removeImportant(task);
-        }
+    important(task: Task) {
+        this.taskService.addImportant(task);
+        task.important = true;
+    }
+
+    notImportant(task: Task) {
+        this.taskService.removeImportant(task);
+        task.important = false;
+
     }
 
     done(task: Task) {

@@ -121,7 +121,7 @@
 }
 
 #main {
-  transition: margin-left .5s;
+  transition: 0.5s;
   /* If you want a transition effect */
   padding: 14px;
   padding-top: 60px;

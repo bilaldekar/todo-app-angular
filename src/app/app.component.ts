@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
       label: 'Tasks',
       items: [
         { label: 'Todo', routerLink: ['/myday'], icon: 'pi pi-align-justify' },
-        { label: 'Important', routerLink: ['/important'], icon: 'pi pi-star-o' },
+        { label: 'Important', routerLink: ['/important'], icon: 'pi pi-bookmark' },
         { label: 'Done', routerLink: ['/archive'], icon: 'pi pi-check' }
       ]
     }]
@@ -47,11 +47,8 @@ export class AppComponent implements OnInit {
 
 
     this.elem = document.documentElement;
-    this.document.getElementById("sidebar").style.width = "197px";
-    this.document.getElementById("main").style.marginLeft = "197px";
-    this.document.getElementById("header").style.marginLeft = "183px";
-    this.document.getElementById("header").style.width = "85%";
-    this.navOpened = true;
+
+    this.openNav();
   }
 
   filter() {

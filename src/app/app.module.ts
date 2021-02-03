@@ -24,6 +24,10 @@ import { InputTextModule } from 'primeng-lts/inputtext';
 import { ArchiveComponent } from './archive/archive.component';
 import { ConfirmDialogModule } from 'primeng-lts/confirmdialog';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
+import { OrderListModule } from 'primeng-lts/orderlist';
+
+import { TableModule } from 'primeng-lts/table';
+
 
 
 @NgModule({
@@ -47,7 +51,7 @@ import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
     MenubarModule,
     InputTextModule,
     ConfirmDialogModule,
-    LoadingBarRouterModule
+    LoadingBarRouterModule, OrderListModule, TableModule
   ],
   providers: [DatePipe, TaskService],
   bootstrap: [AppComponent]
